@@ -34,7 +34,7 @@ debug:
 
 clean:
 	@echo "Removing temporary files or caches"
-	@rm -rf .mypy_cache .pytest_cache src/*.egg-info
+	@rm -rf .mypy_cache .pytest_cache .pytest_cache src/*.egg-info
 	@find . -type d -name "__pycache__" -exec rm -rf {} +
 
 fclean: clean
@@ -56,16 +56,7 @@ lint-strict:
 
 test:
 	@echo "Running test suite..."
-	@uv run pytest -v
-
-test-file:
-	@if [ -z "$(FILE)" ]; then \
-		echo "ERROR: You must specify the file."; \
-		echo "Usage: make test-file FILE=tests/test_your_file.py"; \
-	else \
-		echo "Running tests for : $(FILE)..."; \
-		uv run pytest $(FILE) -v; \
-	fi
+	@uv run pytest $(ARGS) -v
 
 
-.PHONY: all install setup run build debug clean fclean re lint lint-strict test test-file
+.PHONY: all install setup run build debug clean fclean re lint lint-strict test
