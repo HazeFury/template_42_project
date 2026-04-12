@@ -2,9 +2,7 @@ NAME = PROJECT
 VERSION = 0.1.0
 VENV = .venv
 SRC_DIR = src/
-MAIN = main.py
-WHL = $(NAME)-$(VERSION)-py3-none-any.whl
-TAR = $(NAME)-$(VERSION).tar.gz
+MAIN = app/main.py
 
 
 all: install
@@ -15,7 +13,7 @@ install: setup
 setup:
 	@python3 -c "import sys; exit(1) if sys.version_info < (3, 10) else exit(0)" || \
 	(echo "Error: Python 3.10 or higher is required."; exit 1)
-	@if ! command -v uv &> /dev/null; then \
+	@if ! command -v uv > /dev/null 2>&1; then \
 		echo "uv is not installed on this computer."; \
 		echo "Installing the uv package manager..."; \
 		python3 -m pip install --user uv; \
@@ -36,32 +34,29 @@ debug:
 
 clean:
 	@echo "Removing temporary files or caches"
-	@rm -rf .mypy_cache .pytest_cache src/$(NAME).egg-info
+	@rm -rf .mypy_cache .pytest_cache src/*.egg-info
 	@find . -type d -name "__pycache__" -exec rm -rf {} +
 
 fclean: clean
 	@echo "Removing virtual environment and distribution files"
 	@rm -rf $(VENV)
-	@rm -f $(WHL)
-	@rm -f $(TAR)
 	@rm -rf dist/
-	@rm -rf build/
 
 re: fclean all
 
 lint:
 	@echo "running linter..."
 	@uv run flake8 $(SRC_DIR)
-	@uv run mypy $(SRC_DIR) --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
+	@uv run mypy $(SRC_DIR)
 
 lint-strict:
 	@echo "running strict linter..."
-	@uv run flake8 $(MAIN) $(SRC_DIR)
-	@uv run mypy $(MAIN) $(SRC_DIR) --strict
+	@uv run flake8 $(SRC_DIR)
+	@uv run mypy $(SRC_DIR) --strict
 
 test:
 	@echo "Running test suite..."
-	@uv run pytest tests/ -v
+	@uv run pytest -v
 
 test-file:
 	@if [ -z "$(FILE)" ]; then \
