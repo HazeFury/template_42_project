@@ -1,1 +1,0 @@
-Doc on uv package manager
