@@ -39,7 +39,7 @@ When you clone this template to start a brand new 42 project, make sure to compl
 
 1. **Update pyproject.toml:** Open the file and change the **name** and **description** fields to match your new project.
 2. **Update Makefile:** Open the Makefile and update the **NAME** variable at the top.
-3. **Clean Demo Code:** 
+3. **Clean Demo Code:** if you don't need it : 
 	- Delete **src/app/utils/math_helpers.py**
 	- Delete **tests/test_math_helpers.py**
 4. **Initialize Environment:** Run the setup command to build your virtual environment:
@@ -76,11 +76,16 @@ To write tests, simply create files starting with **test_** inside the **tests/*
 **Key concepts and keywords:**
 
 - ```assert```: The core of any test. It checks if a condition is true. If false, the test fails.
-	assert add(2, 3) == 5
+
+```python
+assert add(2, 3) == 5
+```
 
 - ```pytest.raises```: Used to verify that your code correctly crashes and throws an error when given bad input (very important for 42 evaluations!).
-	with pytest.raises(ValueError):
-	    divide(10, 0)
+```python
+with pytest.raises(ValueError):
+	divide(10, 0)
+```
 
 - ```pytest.fixture```: A way to provide a fixed baseline or setup data for your tests (like a dummy database connection or a pre-filled dictionary) that runs before your test functions.
 
@@ -88,20 +93,20 @@ To write tests, simply create files starting with **test_** inside the **tests/*
 You do not need to call **uv** or **pytest** manually most of the time. Use the Makefile!
 
 **Installation & Setup**
-- **make install** (or **make all**): Initializes the virtual environment and installs all dependencies.
-- **make setup**: Check the python version used on the current computer and check if `uv` is installed.
+- ```make install``` (or ```make all```): Initializes the virtual environment and installs all dependencies.
+- ```make setup```: Check the python version used on the current computer and check if `uv` is installed.
 
 **Execution & Debugging**
-- **make run**: Executes the main entry point (src/app/main.py).
-- **make debug**: Launches the project using the Python Debugger (pdb).
+- ```make run```: Executes the main entry point (src/app/main.py).
+- ```make debug```: Launches the project using the Python Debugger (pdb).
 
 **Quality & Testing**
-- **make lint**: Runs flake8 and mypy to ensure code style and type safety.
-- **make lint-strict**: Runs the linters with the strictest type-checking rules.
-- **make test**: Runs the entire test suite.
-- **make test ARGS="path/to/file.py"**: Runs a specific test file or uses specific pytest flags.
+- ```make lint```: Runs flake8 and mypy to ensure code style and type safety.
+- ```make lint-strict```: Runs the linters with the strictest type-checking rules.
+- ```make test```: Runs the entire test suite.
+- ```make test ARGS="path/to/file.py"```: Runs a specific test file or uses specific pytest flags.
 
 **Cleaning**
-- **make clean**: Removes temporary files and caches.
-- **make fclean**: Performs a deep clean, removing the virtual environment and build folders.
-- **make re**: Rebuilds the project from scratch.
+- ```make clean```: Removes temporary files and caches.
+- ```make fclean```: Performs a deep clean, removing the virtual environment and build folders.
+- ```make re```: Rebuilds the project from scratch.
