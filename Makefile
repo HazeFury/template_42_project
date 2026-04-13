@@ -15,8 +15,8 @@ setup:
 	(echo "Error: Python 3.10 or higher is required."; exit 1)
 	@if ! command -v uv > /dev/null 2>&1; then \
 		echo "uv is not installed on this computer."; \
-		echo "Installing the uv package manager..."; \
-		python3 -m pip install --user uv; \
+		echo "Please install the uv package manager..."; \
+		echo "Visit https://docs.astral.sh/uv/getting-started/installation/"; \
 	else \
 		echo "uv is already installed. Version:"; \
 		uv --version --short; \
