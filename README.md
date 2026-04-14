@@ -23,7 +23,7 @@ To define.
 ### Prerequisites
 Before using this template, ensure you have the following installed on your system:
 - **Python 3.10+**
-- **uv 0.10.12+** (Note: The Makefile will attempt to install it for you if it is missing)
+- **uv 0.10.12+**
 
 ### Quick Start
 To set up the environment and run the project for the first time, simply use the following command in your terminal:
@@ -34,34 +34,26 @@ To set up the environment and run the project for the first time, simply use the
 This project is fully automated using Make. Here is the complete list of available commands to manage the project lifecycle:
 
 **Installation & Setup**
-- **make install** (or **make all**): Initializes the virtual environment (.venv) and synchronizes all dependencies using uv.
-- **make setup**: Checks your Python version and installs the uv package manager if it is not already installed.
+- ```make install``` (or **make all**): Initializes the virtual environment (.venv) and synchronizes all dependencies using uv.
+- ```make setup```: Checks your Python version and installs the uv package manager if it is not already installed.
 
 **Execution & Debugging**
-- **make run**: Executes the main entry point (src/main.py) inside the isolated virtual environment.
-- **make debug**: Launches the project using the Python Debugger (pdb), allowing you to step through your code line by line.
+- ```make run```: Executes the main entry point (src/main.py) inside the isolated virtual environment.
+- ```make debug```: Launches the project using the Python Debugger (pdb), allowing you to step through your code line by line.
 
 **Quality & Testing**
-- **make lint**: Runs flake8 for style checking and mypy for static type checking to ensure code quality.
-- **make lint-strict**: Runs the linters but enforces strict typing rules with mypy.
-- **make test**: Runs the entire test suite using pytest.
-- **make test-file FILE=path/to/test.py**: Runs a specific test file. Replace the FILE variable with your target.
+- ```make lint```: Runs flake8 for style checking and mypy for static type checking to ensure code quality.
+- ```make lint-strict```: Runs the linters but enforces strict typing rules with mypy.
+- ```make test```: Runs the entire test suite using pytest.
+- ```make test-file FILE=path/to/test.py```: Runs a specific test file. Replace the FILE variable with your target.
 
 **Building & Cleaning**
-- **make build**: Packages the project into distributable files inside a dist/ directory.
-- **make clean**: Removes all temporary files, such as __pycache__ folders and linter caches.
-- **make fclean**: Performs a deep clean. It executes the clean rule and also removes the virtual environment and build files.
-- **make re**: Rebuilds the project from scratch by running fclean followed by all.
+- ```make build```: Packages the project into distributable files inside a dist/ directory.
+- ```make clean```: Removes all temporary files, such as __pycache__ folders and linter caches.
+- ```make fclean```: Performs a deep clean. It executes the clean rule and also removes the virtual environment and build files.
+- ```make re```: Rebuilds the project from scratch by running fclean followed by all.
 
 ***
-
-### 💡 Pro Tip for Evaluators
-If the environment behaves unexpectedly or if you want to ensure a completely fresh start before testing, simply run:
-
-	make fclean
-	make install
-
-This will wipe the local virtual environment and rebuild it identically in a fraction of a second thanks to uv!
 
 ## III. Resources
 
