@@ -35,7 +35,7 @@ This project is fully automated using Make. Here is the complete list of availab
 
 **Installation & Setup**
 - ```make install``` (or **make all**): Initializes the virtual environment (.venv) and synchronizes all dependencies using uv.
-- ```make setup```: Checks your Python version and installs the uv package manager if it is not already installed.
+- ```make setup```: Checks your Python version and presence of the uv package manager. Exit if both check are not valid.
 
 **Execution & Debugging**
 - ```make run```: Executes the main entry point (src/main.py) inside the isolated virtual environment.
@@ -45,7 +45,7 @@ This project is fully automated using Make. Here is the complete list of availab
 - ```make lint```: Runs flake8 for style checking and mypy for static type checking to ensure code quality.
 - ```make lint-strict```: Runs the linters but enforces strict typing rules with mypy.
 - ```make test```: Runs the entire test suite using pytest.
-- ```make test-file FILE=path/to/test.py```: Runs a specific test file. Replace the FILE variable with your target.
+- ```make test-file ARGS=path/to/test.py```: Runs a specific test file. Replace the FILE variable with your target.
 
 **Building & Cleaning**
 - ```make build```: Packages the project into distributable files inside a dist/ directory.
