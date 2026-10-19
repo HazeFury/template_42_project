@@ -9,10 +9,19 @@ _This project has been created as part of the 42 curriculum by marberge._
 
 # [PROJECT TITLE]
 
-![Language](https://img.shields.io/badge/Language-python-blue)
+<div align="center">
 
-<!-- ![Grade](https://img.shields.io/badge/Grade-125%2F100-brightgreen)
-![Tag](https://img.shields.io/badge/TOCHANGE-grey) -->
+<img src="https://img.shields.io/badge/Project-000000?style=for-the-badge&logo=42&logoColor=white" alt="42" />
+	<img src="https://img.shields.io/badge/Language-Python-00599C?style=for-the-badge&logo=&logoColor=white" alt="C" />
+	<img src="https://img.shields.io/badge/Score-0/100-yellow?style=for-the-badge&logoColor=white" alt="C" />
+	<br>
+	<img src="https://img.shields.io/badge/TAG-darkviolet?style=for-the-badge" alt="GAME" />
+<img src="https://img.shields.io/badge/TAG-darkviolet?style=for-the-badge" alt="Algorithms" />
+	<img src="https://img.shields.io/badge/TAG-darkviolet?style=for-the-badge" alt="Pathfinding" />
+	<img src="https://img.shields.io/badge/TAG-darkviolet?style=for-the-badge" alt="GUI" />
+	<img src="https://img.shields.io/badge/TAG-darkviolet?style=for-the-badge" alt="Parsing" />
+
+</div>
 
 ## I. Description
 
